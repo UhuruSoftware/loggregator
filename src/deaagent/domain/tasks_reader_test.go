@@ -1,3 +1,5 @@
+// build linux
+
 package domain_test
 
 import (

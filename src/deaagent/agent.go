@@ -7,7 +7,7 @@ import (
 	"github.com/cloudfoundry/loggregatorlib/emitter"
 	"github.com/howeyc/fsnotify"
 	"io/ioutil"
-	"path"
+	"path/filepath"
 	"time"
 )
 
@@ -87,7 +87,7 @@ func (agent *Agent) pollInstancesJson(emitter emitter.Emitter) {
 
 	for {
 		time.Sleep(100 * time.Millisecond)
-		err := watcher.Watch(path.Dir(agent.InstancesJsonFilePath))
+		err := watcher.Watch(filepath.Dir(agent.InstancesJsonFilePath))
 		if err != nil {
 			agent.logger.Warnf("Reading failed, retrying. %s\n", err)
 			continue

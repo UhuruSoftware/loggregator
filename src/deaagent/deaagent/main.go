@@ -54,7 +54,7 @@ func (hm DeaAgentHealthMonitor) Ok() bool {
 	return true
 }
 
-func main() {
+func runAgent() {
 	flag.Parse()
 
 	// ** Config Setup
